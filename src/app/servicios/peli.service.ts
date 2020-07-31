@@ -7,13 +7,14 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PeliService {
-  url = 'http://www.omdbapi.com';
-  
+
   constructor(private http: HttpClient) { }
- buscar(title: string): Observable<any> {
-    return this.http.get(`http://www.omdbapi.com?s=${encodeURI(title)}&type=$movie&apikey=$467708d5`).pipe(map(results => results['Search']));
+
+  buscar(titulo: string): Observable<any> {
+    return this.http.get(`http://www.omdbapi.com?s=${encodeURI(titulo)}&apikey=467708d5`).pipe(map(results => results['Search']));
   }
+  
   detalles(id) {
-    return this.http.get(`http://www.omdbapi.com?i=${id}&plot=full&apikey=$467708d5`);
+    return this.http.get(`http://www.omdbapi.com?i=${id}&plot=full&apikey=467708d5`);
   }
 }

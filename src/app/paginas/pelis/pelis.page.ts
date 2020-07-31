@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PeliService } from './../../servicios/peli.service';
+import { PeliService } from '../../servicios/peli.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -15,7 +15,7 @@ export class PelisPage implements OnInit {
   ngOnInit() {
   }
   textchanged() {
-	this.apires = this.servicio.buscar(this.busca);
+    this.apires = this.servicio.buscar(this.busca);
   }
 
 }

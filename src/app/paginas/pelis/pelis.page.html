@@ -9,17 +9,19 @@
  
   <ion-list>
  
-    <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'movies', item.imdbID]">
+    <ion-item button *ngFor="let item of (apires | async)" [routerLink]="['/', 'movies', item.imdbID]">
       <ion-avatar slot="start">
         <img [src]="item.Poster" *ngIf="item.Poster != 'N/A'">
       </ion-avatar>
- 
       <ion-label text-wrap>
         <h3>{{ item.Title }}</h3>
+
+      </ion-label>
+
+      <ion-label slot = "end" text-wrap>
+        
         {{ item.Year }}
       </ion-label>
- 
-      <ion-icon slot="end" *ngIf="item.Type == 'movie'" name="videocam"></ion-icon>
  
     </ion-item>
  
