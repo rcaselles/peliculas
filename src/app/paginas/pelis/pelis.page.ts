@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class PelisPage implements OnInit {
   apires: Observable<any>;
-  busca: string = ' ';
+  busca: string = '';
   constructor(private servicio: PeliService) { }
 
   ngOnInit() {
