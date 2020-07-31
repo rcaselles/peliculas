@@ -15,6 +15,6 @@ export class PeliService {
   }
   
   detalles(id) {
-    return this.http.get(`http://www.omdbapi.com?i=${id}&plot=full&apikey=467708d5`);
+    return this.http.get(`http://www.omdbapi.com?i=${id}&apikey=467708d5`);
   }
 }

@@ -6,10 +6,8 @@
 
 <ion-content>
   <ion-searchbar placeholder="Buscar..." [(ngModel)]="busca" (ionChange)="textchanged($event)"></ion-searchbar>
- 
   <ion-list>
- 
-    <ion-item button *ngFor="let item of (apires | async)" [routerLink]="['/', 'pelis', item.imdbID]">
+    <ion-item button *ngFor="let item of (apires | async)" (click)="goToDetails(item.imdbID)">
       <ion-avatar slot="start">
         <img [src]="item.Poster" *ngIf="item.Poster != 'N/A'">
       </ion-avatar>
@@ -19,9 +17,6 @@
       <ion-label slot = "end" text-wrap>
         {{ item.Year }}
       </ion-label>
- 
     </ion-item>
- 
   </ion-list>
- 
 </ion-content>
