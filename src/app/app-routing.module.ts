@@ -8,10 +8,10 @@ const routes: Routes = [
   },
   {
     path: 'pelis',
-    loadChildren: './paginas/pelis/pelis.module#PelisPageModule'
+    loadChildren: () => import('./paginas/pelis/pelis.module').then( m => m.PelisPageModule)
   },
   {
-    path: 'detalles',
+    path: 'pelis/:id',
     loadChildren: () => import('./paginas/detalles/detalles.module').then( m => m.DetallesPageModule)
   }
 ];
